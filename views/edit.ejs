@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Edit User</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: rgb(143, 143, 195);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5 bg-success">
+    <h2 class="mb-4 text-center text-primary">UPDATE FORM</h2>
+
+    <form method="post" action="/update/<%= userToEdit.id %>">
+
+      <div class="form-group">
+        <label for="inputName">Name</label>
+        <input type="text" name="name" class="form-control" id="inputName" placeholder="Your Name" value="<%= userToEdit.name %>">
+        <span id="error-1"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="inputAge">Age</label>
+        <input type="number" name="age" class="form-control" id="inputAge" placeholder="Your Age" value="<%= userToEdit.age %>">
+        <span id="error-2"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="name@example.com" value="<%= userToEdit.email %>">
+        <span id="error-3"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPhone">Phone</label>
+        <input type="tel" name="phone" class="form-control" id="inputPhone" placeholder="Your Phone Number" value="<%= userToEdit.phone %>">
+        <span id="error-4"></span>
+      </div>
+
+      <input type="hidden" name="id" value="<%= userToEdit.id %>">
+
+      <button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+    </form>
+
+    <form action="/home" method="get">
+      <input class="btn btn-danger" type="submit" value="HOME">
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
